@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Feedback</title>
+
+    <link rel="stylesheet" href="styl.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Student Feedback Management System</h1>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="student-login.html">Student Login</a>
+        <a href="#">Admin Login</a>
+    </nav>
+</header>
+
+<div class="feedback-container">
+
+    <div class="feedback-box">
+
+        <h2>Student Feedback Form</h2>
+
+        <form id="feedbackForm">
+
+            <label>Student Name</label>
+            <input type="text" placeholder="Enter Student Name" required>
+
+            <label>Student enrollment number</label>
+            <input type="text" placeholder="Enter Student enrollment number" required>
+
+            <label>Teacher Name</label>
+
+<select required>
+    <option value="">Select Teacher</option>
+    <option>Mr. Faiz Osmani</option>
+    <option>Mrs. Yogi P.G</option>
+    <option>Mrs. Tele S.N</option>
+</select>
+
+            <label>Subject</label>
+            <select required>
+                <option value="">Select Subject</option>
+                <option>Operting System</option>
+                <option>Software engineering</option>
+                <option>Advance computer network</option>
+            </select>
+
+            <label>Rating</label>
+
+            <div class="rating">
+                <label><input type="radio" name="rating" value="1" required> ⭐</label>
+                <label><input type="radio" name="rating" value="2"> ⭐⭐</label>
+                <label><input type="radio" name="rating" value="3"> ⭐⭐⭐</label>
+                <label><input type="radio" name="rating" value="4"> ⭐⭐⭐⭐</label>
+                <label><input type="radio" name="rating" value="5"> ⭐⭐⭐⭐⭐</label>
+            </div>
+
+            <label>Comments / Suggestions</label>
+
+            <textarea
+                placeholder="Write your feedback here..."
+                rows="5"
+                required>
+            </textarea>
+
+            <button type="submit">Submit Feedback</button>
+
+        </form>
+
+        <p id="successMessage"></p>
+
+    </div>
+
+</div>
+
+<script>
+document.getElementById("feedbackForm").addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const studentName =
+        document.querySelector('input[placeholder="Enter Student Name"]').value;
+
+    const enrollmentNumber =
+        document.querySelector('input[placeholder="Enter Student enrollment number"]').value;
+
+    const selects = document.querySelectorAll("select");
+
+    const teacher = selects[0].value;
+    const subject = selects[1].value;
+
+    const rating =
+        document.querySelector('input[name="rating"]:checked').value;
+
+    const comments =
+        document.querySelector("textarea").value;
+
+    const feedback = {
+        studentName: studentName,
+        enrollmentNumber: enrollmentNumber,
+        teacher: teacher,
+        subject: subject,
+        rating: rating,
+        comments: comments
+    };
+
+    let feedbacks =
+        JSON.parse(localStorage.getItem("feedbacks")) || [];
+
+    feedbacks.push(feedback);
+
+    localStorage.setItem(
+        "feedbacks",
+        JSON.stringify(feedbacks)
+    );
+
+    document.getElementById("successMessage").innerText =
+        "✅ Feedback Submitted Successfully!";
+
+    this.reset();
+});
+</script>
+
+</body>
+</html>
