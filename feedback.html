@@ -17,9 +17,10 @@
     <nav>
         <a href="index.html">Home</a>
         <a href="student-login.html">Student Login</a>
-        <a href="#">Admin Login</a>
+        <a href="admin.html">Admin Login</a>
     </nav>
 </header>
+
 
 <div class="feedback-container">
 
@@ -29,48 +30,160 @@
 
         <form id="feedbackForm">
 
+            <!-- Student Information -->
+
             <label>Student Name</label>
-            <input type="text" placeholder="Enter Student Name" required>
+            <input type="text"
+                   id="studentName"
+                   placeholder="Enter Student Name"
+                   required>
 
-            <label>Student enrollment number</label>
-            <input type="text" placeholder="Enter Student enrollment number" required>
+            <label>Enrollment Number</label>
+            <input type="text"
+                   id="enrollmentNumber"
+                   placeholder="Enter Enrollment Number"
+                   required>
 
-            <label>Teacher Name</label>
 
-<select required>
-    <option value="">Select Teacher</option>
-    <option>Mr. Faiz Osmani</option>
-    <option>Mrs. Yogi P.G</option>
-    <option>Mrs. Tele S.N</option>
-</select>
+            <hr>
+
+            <h3>Teacher Feedback</h3>
+
+
+            <!-- Teacher 1 -->
+
+            <h4>1. Mr. Faiz Osmani</h4>
 
             <label>Subject</label>
-            <select required>
+            <select id="subject1" required>
                 <option value="">Select Subject</option>
-                <option>Operting System</option>
-                <option>Software engineering</option>
-                <option>Advance computer network</option>
+                <option>Operating System</option>
+                <option>Software Engineering</option>
+                <option>Advance Computer Network</option>
             </select>
 
             <label>Rating</label>
 
             <div class="rating">
-                <label><input type="radio" name="rating" value="1" required> ⭐</label>
-                <label><input type="radio" name="rating" value="2"> ⭐⭐</label>
-                <label><input type="radio" name="rating" value="3"> ⭐⭐⭐</label>
-                <label><input type="radio" name="rating" value="4"> ⭐⭐⭐⭐</label>
-                <label><input type="radio" name="rating" value="5"> ⭐⭐⭐⭐⭐</label>
+                <label>
+                    <input type="radio" name="rating1" value="1" required> ⭐
+                </label>
+
+                <label>
+                    <input type="radio" name="rating1" value="2"> ⭐⭐
+                </label>
+
+                <label>
+                    <input type="radio" name="rating1" value="3"> ⭐⭐⭐
+                </label>
+
+                <label>
+                    <input type="radio" name="rating1" value="4"> ⭐⭐⭐⭐
+                </label>
+
+                <label>
+                    <input type="radio" name="rating1" value="5"> ⭐⭐⭐⭐⭐
+                </label>
             </div>
 
-            <label>Comments / Suggestions</label>
+            <label>Comments</label>
+            <textarea id="comment1"
+                      placeholder="Write your feedback"></textarea>
 
-            <textarea
-                placeholder="Write your feedback here..."
-                rows="5"
-                required>
-            </textarea>
 
-            <button type="submit">Submit Feedback</button>
+            <hr>
+
+
+            <!-- Teacher 2 -->
+
+            <h4>2. Mrs. Yogi P.G</h4>
+
+            <label>Subject</label>
+            <select id="subject2" required>
+                <option value="">Select Subject</option>
+                <option>Operating System</option>
+                <option>Software Engineering</option>
+                <option>Advance Computer Network</option>
+            </select>
+
+            <label>Rating</label>
+
+            <div class="rating">
+                <label>
+                    <input type="radio" name="rating2" value="1" required> ⭐
+                </label>
+
+                <label>
+                    <input type="radio" name="rating2" value="2"> ⭐⭐
+                </label>
+
+                <label>
+                    <input type="radio" name="rating2" value="3"> ⭐⭐⭐
+                </label>
+
+                <label>
+                    <input type="radio" name="rating2" value="4"> ⭐⭐⭐⭐
+                </label>
+
+                <label>
+                    <input type="radio" name="rating2" value="5"> ⭐⭐⭐⭐⭐
+                </label>
+            </div>
+
+            <label>Comments</label>
+            <textarea id="comment2"
+                      placeholder="Write your feedback"></textarea>
+
+
+            <hr>
+
+
+            <!-- Teacher 3 -->
+
+            <h4>3. Mrs. Tele S.N</h4>
+
+            <label>Subject</label>
+            <select id="subject3" required>
+                <option value="">Select Subject</option>
+                <option>Operating System</option>
+                <option>Software Engineering</option>
+                <option>Advance Computer Network</option>
+            </select>
+
+            <label>Rating</label>
+
+            <div class="rating">
+                <label>
+                    <input type="radio" name="rating3" value="1" required> ⭐
+                </label>
+
+                <label>
+                    <input type="radio" name="rating3" value="2"> ⭐⭐
+                </label>
+
+                <label>
+                    <input type="radio" name="rating3" value="3"> ⭐⭐⭐
+                </label>
+
+                <label>
+                    <input type="radio" name="rating3" value="4"> ⭐⭐⭐⭐
+                </label>
+
+                <label>
+                    <input type="radio" name="rating3" value="5"> ⭐⭐⭐⭐⭐
+                </label>
+            </div>
+
+            <label>Comments</label>
+            <textarea id="comment3"
+                      placeholder="Write your feedback"></textarea>
+
+
+            <br>
+
+            <button type="submit">
+                Submit All Feedback
+            </button>
 
         </form>
 
@@ -80,52 +193,85 @@
 
 </div>
 
+
 <script>
+
 document.getElementById("feedbackForm").addEventListener("submit", function(event) {
 
     event.preventDefault();
 
     const studentName =
-        document.querySelector('input[placeholder="Enter Student Name"]').value;
+        document.getElementById("studentName").value;
 
     const enrollmentNumber =
-        document.querySelector('input[placeholder="Enter Student enrollment number"]').value;
+        document.getElementById("enrollmentNumber").value;
 
-    const selects = document.querySelectorAll("select");
 
-    const teacher = selects[0].value;
-    const subject = selects[1].value;
+    const teachers = [
+        {
+            teacher: "Mr. Faiz Osmani",
+            subject: document.getElementById("subject1").value,
+            rating: document.querySelector('input[name="rating1"]:checked').value,
+            comments: document.getElementById("comment1").value
+        },
 
-    const rating =
-        document.querySelector('input[name="rating"]:checked').value;
+        {
+            teacher: "Mrs. Yogi P.G",
+            subject: document.getElementById("subject2").value,
+            rating: document.querySelector('input[name="rating2"]:checked').value,
+            comments: document.getElementById("comment2").value
+        },
 
-    const comments =
-        document.querySelector("textarea").value;
+        {
+            teacher: "Mrs. Tele S.N",
+            subject: document.getElementById("subject3").value,
+            rating: document.querySelector('input[name="rating3"]:checked').value,
+            comments: document.getElementById("comment3").value
+        }
+    ];
 
-    const feedback = {
-        studentName: studentName,
-        enrollmentNumber: enrollmentNumber,
-        teacher: teacher,
-        subject: subject,
-        rating: rating,
-        comments: comments
-    };
 
     let feedbacks =
         JSON.parse(localStorage.getItem("feedbacks")) || [];
 
-    feedbacks.push(feedback);
+
+    teachers.forEach(function(item) {
+
+        const feedback = {
+
+            studentName: studentName,
+
+            enrollmentNumber: enrollmentNumber,
+
+            teacher: item.teacher,
+
+            subject: item.subject,
+
+            rating: item.rating,
+
+            comments: item.comments
+
+        };
+
+        feedbacks.push(feedback);
+
+    });
+
 
     localStorage.setItem(
         "feedbacks",
         JSON.stringify(feedbacks)
     );
 
+
     document.getElementById("successMessage").innerText =
-        "✅ Feedback Submitted Successfully!";
+        "✅ Feedback Successfully Submitted!";
+
 
     this.reset();
+
 });
+
 </script>
 
 </body>

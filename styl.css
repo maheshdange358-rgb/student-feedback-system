@@ -224,3 +224,109 @@ footer {
 .btn:hover {
     background: #0056b3;
 }
+/* Feedback Page Design */
+
+.feedback-container {
+    padding: 40px 20px;
+}
+
+.feedback-box {
+    max-width: 850px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.feedback-box h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.feedback-box h3 {
+    background: #007bff;
+    color: white;
+    padding: 12px 15px;
+    border-radius: 8px;
+    margin-top: 25px;
+}
+
+.feedback-box h4 {
+    background: #f1f5f9;
+    padding: 15px;
+    border-left: 5px solid #007bff;
+    border-radius: 6px;
+    margin-top: 25px;
+    font-size: 19px;
+}
+
+.feedback-box label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 7px;
+    font-weight: bold;
+}
+
+.feedback-box input[type="text"],
+.feedback-box select,
+.feedback-box textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font-size: 15px;
+}
+
+.feedback-box textarea {
+    height: 90px;
+    resize: vertical;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.rating label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 0;
+    font-weight: normal;
+}
+
+.feedback-box hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 30px 0;
+}
+
+.feedback-box button {
+    display: block;
+    width: 100%;
+    margin-top: 30px;
+    padding: 14px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.feedback-box button:hover {
+    background: #0056b3;
+}
+
+#successMessage {
+    text-align: center;
+    color: green;
+    font-weight: bold;
+    margin-top: 20px;
+}
